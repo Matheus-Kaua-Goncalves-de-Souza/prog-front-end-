@@ -1,18 +1,34 @@
-function Text1 (){
-  return <p>AAAAAAAAAAAAAAAAAAAAAAAA</p>
-}
-function Text2 (){
-  return <p>I AM PIKAAAAAAAAAA</p>
-}
+'use client'
+import { useState } from 'react';
 
-export default function Home() {
-  const aula = 2;
+
+function Dado({ valor }) {
   return (
     <div>
-    <h1>Eu vou me matarrrrrrrrrrrr </h1>
-    <p> essa {aula}º ta me matando</p>
-    <Text1/>
-    <Text2/>
+      <img 
+        src={`/images/dice-${valor}.svg`} 
+        alt={`Dado mostrando ${valor}`} 
+        width={100} 
+      />
     </div>
-  ) 
+  );
+}
+
+export default function App() {
+  const [valorDado, setValorDado] = useState(1);
+
+  function rolarDado() {
+    const novoValor = Math.floor(Math.random() * 6) + 1;
+    setValorDado(novoValor);
+  }
+
+  return (
+    <div style={{ textAlign: 'center', padding: '20px' }}>
+      <h1>Jogo do Dado</h1>
+      <Dado valor={valorDado} />
+      <button onClick={rolarDado} style={{ marginTop: '10px', padding: '10px', fontSize: '16px' }}>
+        Rolar Dado
+      </button>
+    </div>
+  );
 }
