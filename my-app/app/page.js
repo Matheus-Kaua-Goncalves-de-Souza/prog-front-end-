@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 
-function Dado({ valor }) {
+function Dados({ valor }) {
   return (
     <div>
       <img 
@@ -25,7 +25,7 @@ export default function App() {
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
       <h1>Jogo do Dado</h1>
-      <Dado valor={valorDado} />
+      <Dados valor={valorDado} />
       <button onClick={rolarDado} style={{ marginTop: '10px', padding: '10px', fontSize: '16px' }}>
         Rolar Dado
       </button>
