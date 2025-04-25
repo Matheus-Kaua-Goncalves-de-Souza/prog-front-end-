@@ -26,7 +26,7 @@ export default function Home() {
           </li>
           <li>
             <Link className="text-blue-500 underline" href="/conversor-medida">
-              Conversor Metros
+              Conversor Medidas
             </Link>
           </li>
         </ul>

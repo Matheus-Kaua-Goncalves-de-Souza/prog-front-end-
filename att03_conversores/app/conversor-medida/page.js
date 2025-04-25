@@ -33,9 +33,12 @@ export default function ConversorMedida() {
     const numero = parseFloat(valor.replace(",", "."));
     if (!isNaN(numero)) {
       const m = numero / 3.28084;
+      const pi = m * 39.3701;
       setMetros(m.toFixed(2));
+      setPolegadas(pi.toFixed(2));
     } else {
       setMetros("");
+      setPolegadas("");
     }
   };
 
@@ -46,9 +49,12 @@ export default function ConversorMedida() {
     const numero = parseFloat(valor.replace(",", "."));
     if (!isNaN(numero)) {
       const m = numero / 39.3701;
+      const p = m * 3.28084;
       setMetros(m.toFixed(2));
+      setPes(p.toFixed(2));
     } else {
       setMetros("");
+      setPes("");
     }
   };
 
@@ -79,6 +85,7 @@ export default function ConversorMedida() {
           placeholder="Digite em polegadas"
         />
       </div>
+
       <VoltarHome />
     </main>
   );
